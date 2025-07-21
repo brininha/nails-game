@@ -1,0 +1,43 @@
+body {
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.caixa-botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.caixa-botao h1 {
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.6rem;
+    padding: 0;
+    margin: 0;
+    color: black;
+    padding: 10px;
+    padding-inline: 20px;
+    border-radius: 40px;
+    background-color: #ffe481;
+}
+
+.caixa-botao h1:hover {
+    cursor: pointer;
+}
+
+@media (width <= 430px) {
+    body {
+        background-image: url("../images/background-mobile.jpg");
+        border: 3px solid black;
+    }
+
+    .caixa-botao h1 {
+        font-size: 20px;
+    }
+}
