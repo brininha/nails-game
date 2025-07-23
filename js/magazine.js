@@ -1,20 +1,23 @@
 const canvas = new fabric.Canvas('revista-canvas');
 
 function addTitulo(texto) {
-    const titulo = new fabric.Text(texto.toUpperCase(), {
+    const titulo = new fabric.Text(texto, {
         top: 20,
         fontSize: 20,
         fontWeight: 'bold',
         fill: '#d63384',
-        fontFamily: 'Arial',
-        charSpacing: 100
+        fontFamily: 'Young Serif',
+        charSpacing: 80,
     });
     canvas.add(titulo);
     titulo.centerH();
     canvas.renderAll();
 }
 
-addTitulo('Unhas & Charme');
+document.fonts.load('20px "Young Serif"').then(() => {
+    addTitulo('Unhas & Charme');
+});
+
 
 let imagemPele, imagemUnha, imagemAdesivo;
 
@@ -82,8 +85,8 @@ const legenda = new fabric.Textbox(`O esmalte "${sessionStorage.getItem('selecte
     fontSize: 10,
     fill: '#333',
     textAlign: 'center',
-    fontFamily: 'Times New Roman',
-    charSpacing: 100,
+    fontFamily: 'Courier New',
+    fontWeight: 600,
 });
 canvas.add(legenda);
 legenda.centerH();
