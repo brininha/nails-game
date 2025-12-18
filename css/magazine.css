@@ -4,6 +4,9 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; 
 }
 
 .caixa-nails {
@@ -12,21 +15,27 @@ body {
     justify-content: center;
     flex-direction: row;
     background-color: rgba(255, 255, 255, 0.4);
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     gap: 40px;
     padding: 40px;
+    box-sizing: border-box;
 }
 
 .caixa-revista, .caixa-bgs {
     background-color: rgba(255, 255, 255, 0.9);
     width: 50%;
     height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.caixa-revista {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 4px;
+    padding: 20px;
 }
 
 .title-caixa {
@@ -34,37 +43,63 @@ body {
     margin-bottom: 20px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+    text-align: center;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    background-color: transparent;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-salvar {
+    margin-top: 20px;
+    background-color: #96eedf;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.btn-salvar:hover {
+    background-color: #72e8d4;
+    transform: scale(1.05);
+}
+
+.btn-salvar:active {
+    background-color: #66cfbe;
+    transform: scale(0.95);
 }
 
 .caixa-bgs {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 12px;
-    padding: 40px;
+    align-content: start;
+    gap: 15px;
+    padding: 20px;
     overflow-y: scroll;
 }
 
-.caixa-bgs::-webkit-scrollbar {
-    width: 10px;
-}
-
-.caixa-bgs::-webkit-scrollbar-thumb {
-    background-color: #96eedf;
-    border-radius: 4px;
-}
-
-.caixa-bgs::-webkit-scrollbar-thumb:hover {
-    background-color: #72e8d4;
-}
-
-.caixa-bgs::-webkit-scrollbar-thumb:active {
-    background-color: #66cfbe;
-}
+.caixa-bgs::-webkit-scrollbar { width: 10px; }
+.caixa-bgs::-webkit-scrollbar-thumb { background-color: #96eedf; border-radius: 4px; }
+.caixa-bgs::-webkit-scrollbar-thumb:hover { background-color: #72e8d4; }
+.caixa-bgs::-webkit-scrollbar-thumb:active { background-color: #66cfbe; }
 
 .capa {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .capa img {
@@ -77,28 +112,37 @@ body {
     cursor: pointer;
     transform: scale(1.05);
     transition: transform 0.3s ease-in-out;
+    border: 2px solid #96eedf;
 }
 
-canvas {
-    border: 1px solid #ccc;
-}
+@media (max-width: 768px) {
+    body {
+        overflow: auto;
+    }
 
-.btn-salvar {
-    margin-top: 10px;
-    background-color: #96eedf;
-    border: none;
-    padding: 5px 15px;
-    border-radius: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
+    .caixa-nails {
+        flex-direction: column;
+        padding: 15px;
+        gap: 20px;
+        height: auto;
+        min-height: 100vh;
+    }
 
-.btn-salvar:hover {
-    background-color: #72e8d4;
-}
+    .caixa-revista, .caixa-bgs {
+        width: 100%;
+    }
 
-.btn-salvar:active {
-    background-color: #66cfbe;
+    .caixa-revista {
+        height: auto;
+        padding: 30px 10px;
+    }
+
+    .caixa-bgs {
+        height: 40vh;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+
+    .title-caixa {
+        font-size: 20px;
+    }
 }

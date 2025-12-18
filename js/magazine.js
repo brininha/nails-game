@@ -116,12 +116,16 @@ capas.forEach((capa, index) => {
     capaDiv.classList.add('capa'); 
     capaDiv.innerHTML = `<img src="./images/capas/${capa.img}">`;
     capaDiv.addEventListener('click', () => {
-        const bgImage = new fabric.Image.fromURL(`./images/capas/${capa.img}`, function(img) {
+        fabric.Image.fromURL(`./images/capas/${capa.img}`, function(img) {
+            const scaleX = canvas.width / img.width;
+            const scaleY = canvas.height / img.height;
             img.set({
                 left: 0,
                 top: 0,
-                scaleX: canvas.width / img.width,
-                scaleY: canvas.height / img.height
+                originX: 'left',
+                originY: 'top',
+                scaleX,
+                scaleY
             });
             canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
         });
