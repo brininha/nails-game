@@ -33,12 +33,9 @@ body {
     cursor: pointer;
 }
 
-/* --- RESPONSIVIDADE --- */
 @media (max-width: 600px) {
     body {
-        /* A imagem que você queria para mobile: */
         background-image: url("../images/background-mobile.png"); 
-        /* Removi a borda preta que parecia ser de debug */
     }
 
     .caixa-botao h1 {
