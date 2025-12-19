@@ -9,7 +9,7 @@
 
   <p>
     <a href="https://brininha.github.io/nails-game/">
-      <img src="https://img.shields.io/badge/JOGAR_AGORA-FF69B4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Jogar agora">
+      <img src="https://img.shields.io/badge/JOGAR_AGORA-ffe481?style=for-the-badge&logo=google-chrome&logoColor=black" alt="Jogar agora">
     </a>
   </p>
 
